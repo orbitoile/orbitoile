@@ -78,7 +78,7 @@ nav.main a:hover{color:#fff}
 /* Hero */
 .hero{position:relative;min-height:min(760px,100svh);padding:calc(var(--hdr) + 56px) 0 40px;display:flex;align-items:center;background:
   radial-gradient(900px 520px at 78% 38%,rgba(20,90,255,.22),transparent 70%),
-  radial-gradient(600px 400px at 8% 100%,rgba(20,70,200,.18),transparent 70%),var(--bg);overflow:hidden;isolation:isolate}
+  radial-gradient(600px 400px at 8% 100%,rgba(20,70,200,.18),transparent 70%),var(--bg);overflow:hidden;isolation:isolate;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .hero .wrap{position:relative;display:grid;gap:34px}
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#7fb4ff;font-weight:500}
@@ -805,6 +805,7 @@ if(document.readyState==='complete')measure();else window.addEventListener('load
   window.addEventListener('pointermove',function(e){pmx=e.clientX;pmy=e.clientY;pin=true},{passive:true});
   window.addEventListener('pointerup',function(e){if(e.pointerType==='touch')pin=false});
   document.documentElement.addEventListener('mouseleave',function(){pin=false});
+  hero.addEventListener('mousedown',function(e){if(!e.target.closest('a,button'))e.preventDefault()});
   hero.addEventListener('pointerdown',function(e){if(!e.target.closest('a,button')){boost=1;var b=c.getBoundingClientRect();ripples.push({x:e.clientX-b.left,y:e.clientY-b.top,t:0})}});
   if('IntersectionObserver' in window&&!reduce){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!running){running=true;last=performance.now();frames=0;requestAnimationFrame(frame)}else if(!v)running=false},{threshold:0}).observe(hero)}
   if(reduce){mFps.textContent='fixe';var tf0=document.getElementById('tFps');if(tf0)tf0.textContent='fixe'}
