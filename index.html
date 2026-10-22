@@ -92,6 +92,8 @@ nav.main a:hover{color:#fff}
 .key svg{width:30px;height:30px;color:#4f98ff;flex:none}
 .key small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
 .key strong{display:block;font-family:var(--mono);font-size:17px;font-weight:500;color:#cfe3ff;line-height:1.3}
+.more-m{align-self:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#7fb4ff;text-decoration:none;border-bottom:1px dashed rgba(127,180,255,.5);padding-bottom:2px}
+.more-m:hover{color:#fff}
 .hint{position:absolute;right:24px;bottom:22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--muted);display:flex;align-items:center;gap:14px;text-transform:uppercase}
 .hint::after{content:"";width:2px;height:30px;background:linear-gradient(var(--blue),transparent)}
 
@@ -204,6 +206,23 @@ legend{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transfor
 .cmp .handle{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;z-index:2;transform:translateX(-1px)}
 .cmp .handle::after{content:"";position:absolute;top:50%;left:50%;width:34px;height:34px;border-radius:50%;background:var(--blue2);border:3px solid #fff;transform:translate(-50%,-50%)}
 .cmp input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.tele{margin-top:64px}
+.tele-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.tele-head h3{font-size:clamp(22px,2.6vw,30px);font-weight:500;margin-top:6px}
+.tele-head p{color:var(--muted);font-size:14px;max-width:34em;margin-top:6px}
+.relance{border:1px solid rgba(159,178,212,.35);border-radius:99px;padding:9px 18px;font-size:13.5px;color:#cfe3ff;transition:all .2s}
+.relance:hover{border-color:var(--blue);background:rgba(47,140,255,.1)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;background:linear-gradient(180deg,rgba(20,50,110,.22),rgba(9,22,50,.2))}
+.tile small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7fb4ff}
+.tile b{display:block;font-family:var(--mono);font-weight:500;font-size:28px;color:#e2efff;margin:8px 0 4px;line-height:1.1}
+.tile span{font-size:12px;color:var(--muted)}
+.diag{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:rgba(9,22,50,.3)}
+.diag-t{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fb4ff;margin-bottom:12px}
+.diag ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:8px 18px;font-size:13px;color:#cfdcf5}
+.diag li::before{content:"\2713";display:inline-block;width:18px;color:#3ddc97;font-weight:700}
+.diag li.ko::before{content:"\00D7";color:#ffb454}
+.tele .fine{display:block;margin-top:12px;font-size:12px;color:var(--muted)}
 .tip{margin-top:30px;font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .tip button{border:1px solid rgba(159,178,212,.35);border-radius:8px;padding:6px 12px;font-size:13px;color:#cfe3ff}
 .tip button:hover{border-color:var(--blue)}
@@ -275,6 +294,8 @@ footer.f{background:#030610;border-top:1px solid rgba(47,140,255,.18);padding:36
 
 /* Responsive */
 @media (max-width:1020px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .diag ul{grid-template-columns:repeat(2,1fr)}
   .services{grid-template-columns:repeat(2,1fr)}
   .case,.method,.why-grid{grid-template-columns:1fr;gap:40px}
   .demos{grid-template-columns:1fr}
@@ -291,6 +312,7 @@ footer.f{background:#030610;border-top:1px solid rgba(47,140,255,.18);padding:36
   .hdr-actions .btn-line{display:none}
 }
 @media (max-width:640px){
+  .diag ul{grid-template-columns:1fr}
   section.s{padding:72px 0}
   .hero{align-items:flex-end;padding-top:calc(var(--hdr) + 330px)}
   .services{grid-template-columns:1fr}
@@ -357,7 +379,7 @@ footer.f{background:#030610;border-top:1px solid rgba(47,140,255,.18);padding:36
     <div>
       <h1 class="eyebrow">Création de site internet à Lyon</h1>
       <p class="display">Un site qui <em>prouve</em><br>ce qu’il avance.</p>
-      <p class="lead">Des sites sur mesure, rapides et mesurables. Cette page en est la démonstration : la scène 3D et les chiffres tournent dans votre navigateur, en ce moment.</p>
+      <p class="lead">Des sites sur mesure, rapides et mesurables. Cette page en est la démonstration : la scène 3D et les mesures tournent dans votre navigateur, en ce moment.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">Lancer votre projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-ghost" href="#realisation">Voir la réalisation</a>
@@ -376,6 +398,7 @@ footer.f{background:#030610;border-top:1px solid rgba(47,140,255,.18);padding:36
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
         <div><small>Cookies déposés</small><strong id="mCook">0</strong></div>
       </div>
+      <a class="more-m" href="#mesures">Toutes les mesures en direct ↓</a>
     </div>
   </div>
   <div class="hint" aria-hidden="true">Bougez la souris · cliquez pour une impulsion</div>
@@ -522,6 +545,28 @@ footer.f{background:#030610;border-top:1px solid rgba(47,140,255,.18);padding:36
           <input type="range" min="4" max="96" value="50" aria-label="Comparer l’ancien et le nouveau site">
         </div>
       </div>
+    </div>
+    <div class="tele" id="mesures">
+      <div class="tele-head rv">
+        <div><span class="eyebrow" style="margin:0">Mesures en direct</span><h3>Cette page se mesure elle-même</h3>
+        <p>Ces chiffres sont lus dans votre navigateur, à l’instant. Rien n’est écrit à l’avance : rechargez la page, ils changeront.</p></div>
+        <button class="relance" id="relance" type="button">Relancer ↻</button>
+      </div>
+      <div class="tiles rv">
+        <div class="tile"><small>Images par seconde</small><b id="tFps">...</b><span>Fluidité de la scène 3D</span></div>
+        <div class="tile"><small>Affichage complet</small><b id="tLoad">...</b><span>Mesuré par votre navigateur</span></div>
+        <div class="tile"><small>Plus grand élément</small><b id="tLcp">...</b><span>Temps d’affichage du plus grand bloc</span></div>
+        <div class="tile"><small>Poids de la page</small><b id="tWeight">...</b><span>Texte, styles, script et image intégrés</span></div>
+        <div class="tile"><small>Requêtes externes</small><b id="tExt">...</b><span>Hors ce site</span></div>
+        <div class="tile"><small>Éléments de la page</small><b id="tNodes">...</b><span>Compté en continu</span></div>
+        <div class="tile"><small>Cookies déposés</small><b id="tCook">...</b><span>Aucun suivi, aucune publicité</span></div>
+        <div class="tile"><small>Temps sur la page</small><b id="tTime">00:00</b><span>Votre visite, en direct</span></div>
+      </div>
+      <div class="diag rv">
+        <div class="diag-t"><span>Autodiagnostic</span><span id="diagScore">en cours...</span></div>
+        <ul id="diagList"></ul>
+      </div>
+      <small class="fine">Lecture via l’API Performance du navigateur. Contrôles exécutés localement, sur cette page uniquement.</small>
     </div>
     <p class="tip">Astuce : <button type="button" id="openPal2">Ctrl K</button> ouvre la navigation instantanée sur toute la page.</p>
   </div>
@@ -719,7 +764,7 @@ if(document.readyState==='complete')measure();else window.addEventListener('load
   }
   function frame(now){
     if(!running)return;
-    frames++;if(now-last>=1000){mFps.textContent=Math.round(frames*1000/(now-last))+' ips';frames=0;last=now}
+    frames++;if(now-last>=1000){var fv=Math.round(frames*1000/(now-last))+' ips';mFps.textContent=fv;var tf=document.getElementById('tFps');if(tf)tf.textContent=fv;frames=0;last=now}
     tx+=(mx-tx)*.05;ty+=(my-ty)*.05;boost*=.96;
     var cb=c.getBoundingClientRect(),lx=pmx-cb.left,ly=pmy-cb.top;
     if(sxm<-900){sxm=lx;sym=ly}
@@ -762,8 +807,54 @@ if(document.readyState==='complete')measure();else window.addEventListener('load
   document.documentElement.addEventListener('mouseleave',function(){pin=false});
   hero.addEventListener('pointerdown',function(e){if(!e.target.closest('a,button')){boost=1;var b=c.getBoundingClientRect();ripples.push({x:e.clientX-b.left,y:e.clientY-b.top,t:0})}});
   if('IntersectionObserver' in window&&!reduce){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!running){running=true;last=performance.now();frames=0;requestAnimationFrame(frame)}else if(!v)running=false},{threshold:0}).observe(hero)}
-  if(reduce){mFps.textContent='fixe'}
+  if(reduce){mFps.textContent='fixe';var tf0=document.getElementById('tFps');if(tf0)tf0.textContent='fixe'}
   requestAnimationFrame(frame);
+})();
+
+/* Mesures détaillées et autodiagnostic */
+(function(){
+  var t0=performance.now(),lcp=null;
+  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+  try{new PerformanceObserver(function(l){var e=l.getEntries();if(e.length){lcp=e[e.length-1].startTime;set('tLcp',Math.round(lcp)+' ms')}}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){set('tLcp','n.d.')}
+  function weight(){
+    var n=performance.getEntriesByType('navigation')[0],b=0;
+    if(n)b+=(n.transferSize||n.encodedBodySize||n.decodedBodySize||0);
+    performance.getEntriesByType('resource').forEach(function(r){b+=(r.transferSize||r.encodedBodySize||0)});
+    if(!b)b=document.documentElement.outerHTML.length;
+    return b;
+  }
+  function ext(){
+    var o=location.origin,k=0;
+    performance.getEntriesByType('resource').forEach(function(r){try{if(new URL(r.name).origin!==o&&r.name.indexOf('data:')!==0)k++}catch(e){}});
+    return k;
+  }
+  function cookies(){try{return document.cookie.split(';').filter(function(c){return c.trim()}).length}catch(e){return 0}}
+  function nodes(){set('tNodes',document.getElementsByTagName('*').length+' nœuds')}
+  function run(){
+    try{var n=performance.getEntriesByType('navigation')[0];set('tLoad',Math.round(n?(n.loadEventEnd||n.domContentLoadedEventEnd||performance.now()):performance.now())+' ms')}catch(e){set('tLoad','n.d.')}
+    set('tWeight',Math.round(weight()/1024)+' Ko');set('tExt',ext());set('tCook',cookies());nodes();
+    if(lcp===null)set('tLcp','...');
+    var imgs=$$('img'),checks=[
+      ['Connexion sécurisée (HTTPS)',location.protocol==='https:'],
+      ['Une seule balise h1',$$('h1').length===1],
+      ['Langue de la page déclarée',!!document.documentElement.lang],
+      ['Description pour Google',(($('meta[name=description]')||{}).content||'').length>50],
+      ['Balisage structuré (JSON-LD)',!!$('script[type="application/ld+json"]')],
+      ['Images avec texte alternatif',imgs.every(function(i){return i.getAttribute('alt')})],
+      ['Adaptée au mobile',!!$('meta[name=viewport]')],
+      ['Aucun cookie déposé',cookies()===0]
+    ],ul=$('#diagList'),ok=0;ul.innerHTML='';
+    checks.forEach(function(c){var li=document.createElement('li');li.textContent=c[0];if(c[1])ok++;else li.className='ko';ul.appendChild(li)});
+    set('diagScore',ok+' / '+checks.length+' contrôles réussis');
+  }
+  function go(){setTimeout(run,300)}
+  if(document.readyState==='complete')go();else window.addEventListener('load',go);
+  $('#relance').addEventListener('click',function(){set('diagScore','en cours...');setTimeout(run,350)});
+  setInterval(function(){
+    var s=Math.floor((performance.now()-t0)/1000),m=Math.floor(s/60);
+    set('tTime',('0'+m).slice(-2)+':'+('0'+(s%60)).slice(-2));
+  },1000);
+  setInterval(nodes,2000);
 })();
 
 /* Configurateur */
@@ -809,7 +900,7 @@ if(document.readyState==='complete')measure();else window.addEventListener('load
 (function(){
   var items=[
     ['Accueil','#accueil','page'],['Services','#services','page'],['Réalisation : Sentinelle','#realisation','page'],['Méthode','#methode','page'],
-    ['À essayer','#demos','page'],['Pourquoi Orbitoile','#pourquoi','page'],['Contact','#contact','page'],
+    ['À essayer','#demos','page'],['Mesures en direct','#mesures','page'],['Pourquoi Orbitoile','#pourquoi','page'],['Contact','#contact','page'],
     ['Guides','guides.html','guide'],['Création de site internet à Lyon','creation-site-internet-lyon.html','guide'],
     ['Site internet pour artisan','site-internet-artisan-lyon.html','guide'],['Site avec prise de rendez-vous','site-prise-de-rendez-vous-lyon.html','guide'],
     ['Boutique en ligne','boutique-en-ligne-lyon.html','guide'],['Refonte de site internet','refonte-site-internet-lyon.html','guide'],
