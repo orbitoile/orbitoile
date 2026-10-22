@@ -21,7 +21,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://orbitoile.fr/#site","url":"https://orbitoile.fr/","name":"Orbitoile","inLanguage":"fr-FR"},
-{"@type":"ProfessionalService","@id":"https://orbitoile.fr/#service","name":"Orbitoile","url":"https://orbitoile.fr/","image":"https://orbitoile.fr/og-image.png","email":"bonjour@orbitoile.fr","description":"Création de sites internet sur mesure à Lyon : sites vitrines, prise de rendez-vous, boutiques, référencement local, réseaux sociaux et identité de marque.","address":{"@type":"PostalAddress","addressLocality":"Lyon","addressCountry":"FR"},"areaServed":{"@type":"City","name":"Lyon"},"founder":{"@type":"Person","name":"Alexandre Mizzi"},"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Création de site internet sur mesure"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Référencement naturel local"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Réseaux sociaux"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Identité de marque"}}]}
+{"@type":"ProfessionalService","@id":"https://orbitoile.fr/#organization","name":"Orbitoile","url":"https://orbitoile.fr/","image":"https://orbitoile.fr/og-image.png","email":"bonjour@orbitoile.fr","description":"Création de sites internet sur mesure à Lyon : sites vitrines, prise de rendez-vous, boutiques, référencement local, réseaux sociaux et identité de marque.","address":{"@type":"PostalAddress","addressLocality":"Lyon","addressCountry":"FR"},"areaServed":{"@type":"City","name":"Lyon"},"founder":{"@type":"Person","name":"Alexandre Mizzi"},"logo":"https://orbitoile.fr/logo.png","sameAs":["https://www.facebook.com/orbitoile","https://www.instagram.com/orbitoile/","https://www.linkedin.com/company/orbitoile/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Création de site internet sur mesure"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Référencement naturel local"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Réseaux sociaux"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Identité de marque"}}]}
 ]}
 </script>
 <style>
@@ -639,6 +639,9 @@ const fps = Math.round(frames / seconds);
       <div><h4>Contact</h4><ul>
         <li><button type="button" data-mail="">bonjour@orbitoile.fr</button></li>
         <li>Basé à Lyon</li>
+        <li><a href="https://www.facebook.com/orbitoile" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/orbitoile/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/orbitoile/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li>0 cookie, 0 traceur</li></ul></div>
     </div>
     <div class="f-bot">
@@ -653,8 +656,8 @@ const fps = Math.round(frames / seconds);
     <h2>Mentions légales</h2>
     <dl>
       <dt>Éditeur</dt><dd>Alexandre Mizzi, entrepreneur individuel, sous le nom commercial Orbitoile</dd>
-      <dt>SIRET</dt><dd>En cours de création</dd>
-      <dt>Adresse</dt><dd>[numéro et rue à compléter], 01120 Nièvroz, France</dd>
+      <dt>SIRET</dt><dd>En cours d’attribution</dd>
+      <dt>Adresse</dt><dd>45 rue marietton, 6909 Lyon, France</dd>
       <dt>Contact</dt><dd>bonjour@orbitoile.fr</dd>
       <dt>Directeur de la publication</dt><dd>Alexandre Mizzi</dd>
       <dt>Hébergeur</dt><dd>GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</dd>
@@ -711,6 +714,8 @@ tick();setInterval(tick,1000);
 /* Mentions */
 var men=$('#mentions');
 $('#openMentions').addEventListener('click',function(){men.classList.toggle('open');if(men.classList.contains('open'))men.scrollIntoView({behavior:'smooth'})});
+function hashMentions(){if(location.hash==='#mentions'){men.classList.add('open');men.scrollIntoView()}}
+hashMentions();window.addEventListener('hashchange',hashMentions);
 
 /* Mesures en direct */
 var mLoad=$('#mLoad'),mCook=$('#mCook'),mFps=$('#mFps');
